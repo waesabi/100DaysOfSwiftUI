@@ -9,14 +9,37 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-//		LinearGradient(
-//			gradient: Gradient(colors: [.white, .blue]),
-//			startPoint: .top,
-//			endPoint: .bottom
-//		)
-//		RadialGradient(colors: [.white, .blue], center: .center, startRadius: 100, endRadius: 200)
-		AngularGradient(colors: [.white, .blue, .red, .brown, .cyan, .green], center: .center)
+		VStack(spacing: 16) {
+			Button("Button 1") { }
+				.buttonStyle(.bordered)
+			
+			Button("Button 2", role: .destructive) { }
+				.buttonStyle(.bordered)
+			
+			Button("Button 3") { }
+				.buttonStyle(.borderedProminent)
+				.tint(.mint)
+			
+			Button("Button 4", role: .destructive) { }
+				.buttonStyle(.borderedProminent)
+			
+			Button {
+				print("Edit is tapped")
+			} label: {
+				Image(systemName: "pencil")
+			}
+			
+			Button {
+				print("Edit is tapped")
+			} label: {
+				Label("Edit", systemImage: "pencil")
+			}
+		}
     }
+	
+	func delete() {
+		print("Delete done.")
+	}
 }
 
 struct ContentView_Previews: PreviewProvider {
